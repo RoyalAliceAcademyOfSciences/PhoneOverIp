@@ -72,7 +72,8 @@ EncodePDUMessage(const char* sms_text, int sms_text_length, unsigned char* outpu
 		}
 	}
 
-	if (i <= sms_text_length)
+
+	if (i < sms_text_length)
 		output_buffer[output_buffer_length++] =	(sms_text[i] & BITMASK_7BITS) >> (carry_on_bits - 1);
 
 	return output_buffer_length;
